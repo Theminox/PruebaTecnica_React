@@ -53,7 +53,7 @@ Este proyecto es una aplicación de gestión de tareas desarrollada en React com
 
 - Muestra una lista de tareas.
 - Permite agregar nuevas tareas.
-- Permite editar el título de una tarea existente.
+- Permite editar una tarea existente.
 - Permite eliminar tareas.
 - Permite navegar a la sección de perfil y cerrar sesión.
 

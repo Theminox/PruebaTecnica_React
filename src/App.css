@@ -1,0 +1,25 @@
+.app-container {
+  text-align: center;
+  margin-top: 50px;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}

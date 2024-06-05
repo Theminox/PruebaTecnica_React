@@ -8,6 +8,7 @@ const Tareas = () => {
   const [tareas, setTareas] = useState([]);
   const [nuevaTarea, setNuevaTarea] = useState('');
   const [editandoTarea, setEditandoTarea] = useState(null);
+  const [tituloEditado, setTituloEditado] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -48,11 +49,12 @@ const Tareas = () => {
 
   const handleEditTarea = (id, title) => {
     setEditandoTarea(id);
+    setTituloEditado(title);
   };
 
-  const handleSaveTarea = (id, nuevoTitulo) => {
+  const handleSaveTarea = (id) => {
     const updatedTareas = tareas.map(tarea =>
-      tarea.id === id ? { ...tarea, title: nuevoTitulo } : tarea
+      tarea.id === id ? { ...tarea, title: tituloEditado } : tarea
     );
     setTareas(updatedTareas);
     localStorage.setItem('tareas', JSON.stringify(updatedTareas));
@@ -60,44 +62,46 @@ const Tareas = () => {
   };
 
   return (
-  <MagicMotion>
-    <div className="tareas-container">
-      <h2>Gestión de Tareas</h2>
-      <ul>
-        {tareas.map(tarea => (
-          <li key={tarea.id}>
-            {editandoTarea === tarea.id ? (
-              <div>
-                <input
-                  type="text"
-                  value={tarea.title}
-                  onChange={(e) => handleSaveTarea(tarea.id, e.target.value)}
-                />
-                <button onClick={() => handleSaveTarea(tarea.id, tarea.title)}>Guardar</button>
-              </div>
-            ) : (
-              <div>
-                {tarea.title}
-                <button onClick={() => handleEditTarea(tarea.id, tarea.title)}>Editar</button>
-                <button onClick={() => handleDeleteTarea(tarea.id)}>Eliminar</button>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-      <form onSubmit={handleAddTarea}>
-        <input
-          type="text"
-          value={nuevaTarea}
-          onChange={(e) => setNuevaTarea(e.target.value)}
-          placeholder="Ingrese una nueva tarea"
-        />
-        <button type="submit">Agregar Tarea</button>
-      </form>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
-      <button onClick={handleGoToPerfil}>Ir a Perfil</button>
-    </div>
-  </MagicMotion>
+    <MagicMotion>
+      <div className="tareas-container">
+        <h2>Lista de Tareas</h2>
+        <ul>
+          {tareas.map(tarea => (
+            <li key={tarea.id}>
+              {editandoTarea === tarea.id ? (
+                <div>
+                  <input
+                    className="custom-input"
+                    type="text"
+                    value={tituloEditado}
+                    onChange={(e) => setTituloEditado(e.target.value)}
+                  />
+                  <button onClick={() => handleSaveTarea(tarea.id)}>Guardar</button>
+                </div>
+              ) : (
+                <div>
+                  {tarea.title}
+                  <button onClick={() => handleEditTarea(tarea.id, tarea.title)}>Editar</button>
+                  <button onClick={() => handleDeleteTarea(tarea.id)}>Eliminar</button>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+        <form onSubmit={handleAddTarea}>
+          <input
+            className="custom-input"
+            type="text"
+            value={nuevaTarea}
+            onChange={(e) => setNuevaTarea(e.target.value)}
+            placeholder="Ingrese una nueva tarea"
+          />
+          <button type="submit">Agregar Tarea</button>
+        </form>
+        <button onClick={handleLogout}>Cerrar Sesión</button>
+        <button onClick={handleGoToPerfil}>Ir a Perfil</button>
+      </div>
+    </MagicMotion>
   );
 };
 

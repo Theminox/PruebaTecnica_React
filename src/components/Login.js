@@ -22,10 +22,11 @@ const Login = () => {
     <MagicMotion>
       <div className="login-container">
         <form onSubmit={handleLogin}>
-          <h2>Login</h2>
+          <h2>Inicio de sesión</h2>
           <div className="input-container">
-            <label>Email:</label>
+            <label>Correo:</label>
             <input
+              class="custom-input"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -33,15 +34,16 @@ const Login = () => {
             />
           </div>
           <div className="input-container">
-            <label>Password:</label>
+            <label>Contraseña:</label>
             <input
+              class="custom-input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Iniciar sesión</button>
         </form>
       </div>
     </MagicMotion>

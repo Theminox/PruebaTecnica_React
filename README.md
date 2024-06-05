@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Prueba Técnica de React - Gestión de Tareas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación de gestión de tareas desarrollada en React como parte de una prueba técnica. Permite a los usuarios iniciar sesión, ver su perfil, gestionar tareas y realizar acciones como editar, agregar y eliminar tareas.
 
-## Available Scripts
+## Instalación
 
-In the project directory, you can run:
+1. Clona este repositorio en tu máquina local:
 
-### `npm start`
+    ```bash
+    git clone https://github.com/Theminox/PruebaTecnica_React.git
+    ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navega hasta el directorio del proyecto:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ```bash
+    cd PruebaTecnica_React
+    ```
 
-### `npm test`
+3. Instala las dependencias utilizando npm o yarn:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    npm install
+    ```
 
-### `npm run build`
+    Esto instalará todas las dependencias necesarias según lo especificado en el archivo `package.json`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Uso
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Inicia la aplicación:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    npm start
+    ```
 
-### `npm run eject`
+2. Abre tu navegador y accede a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Funcionalidades Principales
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Permite a los usuarios iniciar sesión utilizando un correo electrónico y una contraseña.
+- Las credenciales de prueba son:
+  - Correo electrónico: user@example.com
+  - Contraseña: password
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Perfil
 
-## Learn More
+- Muestra información del usuario, como nombre, correo electrónico, teléfono y ciudad.
+- Permite editar la información del usuario.
+- Permite navegar a la sección de tareas.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. Gestión de Tareas
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Muestra una lista de tareas.
+- Permite agregar nuevas tareas.
+- Permite editar una tarea existente.
+- Permite eliminar tareas.
+- Permite navegar a la sección de perfil y cerrar sesión.
 
-### Code Splitting
+## Tecnologías Utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- React
+- React Router
+- react-magic-motion
+- JWT
+- HTML
+- CSS
+- JavaScript
 
-### Analyzing the Bundle Size
+## Estructura del Proyecto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+La estructura del proyecto es la siguiente:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```plaintext
+react-tareas/
+│
+├── public/                   # Archivos públicos, incluyendo index.html
+│   ├── index.html            # Página principal
+│   └── ...
+│
+├── src/                      # Código fuente de la aplicación
+│   ├── components/           # Componentes de React
+│   │   ├── Login.js          # Componente de login
+│   │   ├── Perfil.js         # Componente de perfil
+│   │   ├── Tareas.js         # Componente de tareas
+│   │   └── ...               # Otros componentes
+│   │
+│   ├── styles/               # Archivos de estilos CSS
+│   │   ├── Login.css         # Estilos para el login
+│   │   ├── Perfil.css        # Estilos para el perfil
+│   │   ├── Tareas.css        # Estilos para las tareas
+│   │   └── ...               # Otros archivos de estilos
+│   │
+│   ├── App.js                # Componente principal
+│   ├── auth.js               # Funciones de autenticación
+│   ├── index.js              # Punto de entrada de la aplicación
+│   └── ...
+│
+├── package.json              # Lista de dependencias del proyecto
+├── package-lock.json         # Archivo de bloqueo de versiones de npm
+└── README.md                 # Este archivo

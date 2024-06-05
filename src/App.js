@@ -11,9 +11,9 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1>Bienvenido a la Gestión de Tareas </h1>
+      <h1>Bienvenido a la App Gestión de Tareas</h1>
       <nav className="nav-container">
-        <button className="nav-button" onClick={() => handleNavigateTo("/login")}>Login</button>
+        <button className="nav-button" onClick={() => handleNavigateTo("/login")}>Iniciar Sesión</button>
         <button className="nav-button" onClick={() => handleNavigateTo("/tareas")}>Tareas</button>
         <button className="nav-button" onClick={() => handleNavigateTo("/perfil")}>Perfil</button>
       </nav>

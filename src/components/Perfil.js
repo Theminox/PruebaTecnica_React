@@ -61,10 +61,10 @@ const Perfil = () => {
       <img src="https://via.placeholder.com/150" alt="Avatar" />
       {editing ? (
         <form onSubmit={handleSubmit}>
-          <input type="text" name="name" value={editedUser.name} onChange={handleChange} />
-          <input type="email" name="email" value={editedUser.email} onChange={handleChange} />
-          <input type="text" name="phone" value={editedUser.phone} onChange={handleChange} />
-          <input type="text" name="city" value={editedUser.city} onChange={handleChange} />
+          <input type="text" name="name" class="custom-input" value={editedUser.name} onChange={handleChange} />
+          <input type="email" name="email" class="custom-input" value={editedUser.email} onChange={handleChange} />
+          <input type="text" name="phone" class="custom-input" value={editedUser.phone} onChange={handleChange} />
+          <input type="text" name="city" class="custom-input" value={editedUser.city} onChange={handleChange} />
           <button type="submit">Guardar Cambios</button>
         </form>
       ) : (

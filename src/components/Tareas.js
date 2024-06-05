@@ -98,8 +98,8 @@ const Tareas = () => {
           />
           <button type="submit">Agregar Tarea</button>
         </form>
-        <button onClick={handleLogout}>Cerrar Sesión</button>
         <button onClick={handleGoToPerfil}>Ir a Perfil</button>
+        <button onClick={handleLogout}>Cerrar Sesión</button>
       </div>
     </MagicMotion>
   );
